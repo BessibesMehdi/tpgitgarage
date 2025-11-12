@@ -1,15 +1,17 @@
 package garages;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 /**
  * Représente un stationnement d'une voiture dans un garage.
  */
 @Getter
+@Setter
 @RequiredArgsConstructor // génère un constructeur avec un paramètre pour chaque champ @NonNull ou final
 public class Stationnement {
 
@@ -56,6 +58,12 @@ public class Stationnement {
 	 * @return Une chaîne représentant l'état du stationnement, incluant la date d'entrée
 	 *         et soit "en cours" soit la date de sortie.
 	 */
+	
+	public Garage getGarageVisite() {
+		return garageVisite;
+	}
+
+
 	@Override
 	public String toString() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy");
